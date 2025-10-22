@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 180">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;family=Poppins:wght@300&amp;display=swap');
-      .main-text { 
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Raleway:wght@300&amp;display=swap');
+      .main-title { 
         fill: #fffcfa; 
-        font-size: 70px; 
-        font-family: 'Montserrat', sans-serif; 
+        font-size: 90px; 
+        font-family: 'Playfair Display', serif; 
         font-weight: 700; 
-        letter-spacing: 5px;
+        letter-spacing: 6px;
         text-anchor: middle;
       }
-      .sub-text { 
+      .main-subtitle { 
         fill: #fffcfa; 
-        font-size: 18px; 
-        font-family: 'Poppins', sans-serif; 
+        font-size: 22px; 
+        font-family: 'Raleway', sans-serif; 
         font-weight: 300; 
-        letter-spacing: 3px;
+        letter-spacing: 4px;
         text-anchor: middle;
       }
     </style>
   </defs>
-  <text class="main-text" x="350" y="90">ADAM_MAKS</text>
-  <text class="sub-text" x="350" y="130">IT Designer and Developer</text>
+  <text class="main-title" x="450" y="140">ADAM_MAKS</text>
+  <text class="main-subtitle" x="450" y="190">IT Designer and Developer</text>
 </svg>

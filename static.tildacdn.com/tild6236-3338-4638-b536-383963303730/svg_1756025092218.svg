@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 120">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;family=Poppins:wght@300&amp;display=swap');
-      .footer-main { 
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Raleway:wght@300&amp;display=swap');
+      .footer-title { 
         fill: #fffcfa; 
-        font-size: 48px; 
-        font-family: 'Montserrat', sans-serif; 
+        font-size: 56px; 
+        font-family: 'Playfair Display', serif; 
         font-weight: 700; 
-        letter-spacing: 4px;
-        text-anchor: start;
+        letter-spacing: 5px;
+        text-anchor: middle;
       }
-      .footer-sub { 
+      .footer-subtitle { 
         fill: #fffcfa; 
-        font-size: 16px; 
-        font-family: 'Poppins', sans-serif; 
+        font-size: 18px; 
+        font-family: 'Raleway', sans-serif; 
         font-weight: 300; 
-        letter-spacing: 2px;
-        text-anchor: start;
+        letter-spacing: 3px;
+        text-anchor: middle;
       }
     </style>
   </defs>
-  <text class="footer-main" x="80" y="60">ADAM_MAKS</text>
-  <text class="footer-sub" x="600" y="65">IT Designer and Developer</text>
+  <text class="footer-title" x="550" y="60">ADAM_MAKS</text>
+  <text class="footer-subtitle" x="550" y="90">IT Designer and Developer</text>
 </svg>
