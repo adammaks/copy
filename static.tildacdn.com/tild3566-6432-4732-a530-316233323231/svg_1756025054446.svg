@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40">
-  <defs>
-    <style>
-      .logo-bg { fill: #32302f; }
-      .logo-text { fill: #fffcfa; font-size: 18px; font-family: Arial, sans-serif; font-weight: 700; }
-    </style>
-  </defs>
-  <rect class="logo-bg" x="0" y="0" width="200" height="40" rx="4"/>
-  <text class="logo-text" x="10" y="26">ADAM MAKS</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40">
+  <!-- Минималистичный логотип "AM" -->
+  <path fill="#fffcfa" d="M10,35 L15,15 L20,35 M12,28 L18,28" stroke="#fffcfa" stroke-width="2.5"/>
+  <path fill="#fffcfa" d="M30,35 L30,15 L37,25 L44,15 L44,35" stroke="#fffcfa" stroke-width="2.5" fill="none"/>
+  <circle fill="#fffcfa" cx="55" cy="25" r="2"/>
+  <path fill="#fffcfa" d="M65,35 L65,15 L72,25 L79,15 L79,35" stroke="#fffcfa" stroke-width="2" fill="none"/>
+  <path fill="#fffcfa" d="M85,35 L90,15 L95,35 M87,28 L93,28" stroke="#fffcfa" stroke-width="2"/>
+  <path fill="#fffcfa" d="M100,35 L100,15 L110,20 L100,25 L110,30" stroke="#fffcfa" stroke-width="2" fill="none"/>
 </svg>

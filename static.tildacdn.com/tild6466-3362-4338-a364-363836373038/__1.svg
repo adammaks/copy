@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200">
-  <defs>
-    <style>
-      .main-text { fill: #fffcfa; font-size: 72px; font-family: Arial, sans-serif; font-weight: 700; letter-spacing: 4px; }
-      .sub-text { fill: #fffcfa; font-size: 16px; font-family: Arial, sans-serif; font-weight: 400; letter-spacing: 3px; }
-    </style>
-  </defs>
-  <text class="main-text" x="50" y="90">ADAM</text>
-  <text class="main-text" x="50" y="160">MAKS</text>
-  <text class="sub-text" x="380" y="165">WEB DESIGNER</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100">
+  <!-- Большой центральный логотип "ADAM MAKS" -->
+  <!-- A -->
+  <path fill="#fffcfa" d="M20,90 L35,20 L50,90 M27,65 L43,65" stroke="#fffcfa" stroke-width="4"/>
+  <!-- D -->
+  <path fill="#fffcfa" d="M60,90 L60,20 L80,20 Q95,20 95,55 Q95,90 80,90 Z" stroke="#fffcfa" stroke-width="3"/>
+  <!-- A -->
+  <path fill="#fffcfa" d="M105,90 L120,20 L135,90 M112,65 L128,65" stroke="#fffcfa" stroke-width="4"/>
+  <!-- M -->
+  <path fill="#fffcfa" d="M145,90 L145,20 L160,50 L175,20 L175,90" stroke="#fffcfa" stroke-width="4" fill="none"/>
+  
+  <!-- M -->
+  <path fill="#fffcfa" d="M20,90 L20,60 L35,90 L50,60 L50,90" stroke="#fffcfa" stroke-width="3" fill="none" transform="translate(180 0)"/>
+  <!-- A -->
+  <path fill="#fffcfa" d="M240,90 L255,60 L270,90 M247,80 L263,80" stroke="#fffcfa" stroke-width="3"/>
 </svg>
