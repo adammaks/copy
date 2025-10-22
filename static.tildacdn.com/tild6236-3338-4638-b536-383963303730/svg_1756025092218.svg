@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 120">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 150">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Raleway:wght@300&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&amp;family=Lato:wght@300&amp;display=swap');
       .footer-title { 
         fill: #fffcfa; 
-        font-size: 56px; 
-        font-family: 'Playfair Display', serif; 
+        font-size: 52px; 
+        font-family: 'Lato', Arial, sans-serif; 
         font-weight: 700; 
-        letter-spacing: 5px;
+        letter-spacing: 4px;
         text-anchor: middle;
       }
       .footer-subtitle { 
         fill: #fffcfa; 
-        font-size: 18px; 
-        font-family: 'Raleway', sans-serif; 
+        font-size: 17px; 
+        font-family: 'Lato', Arial, sans-serif; 
         font-weight: 300; 
         letter-spacing: 3px;
         text-anchor: middle;
       }
     </style>
   </defs>
-  <text class="footer-title" x="550" y="60">ADAM_MAKS</text>
-  <text class="footer-subtitle" x="550" y="90">IT Designer and Developer</text>
+  <text class="footer-title" x="700" y="70">ADAM_MAKS</text>
+  <text class="footer-subtitle" x="700" y="105">IT Designer and Developer</text>
 </svg>
