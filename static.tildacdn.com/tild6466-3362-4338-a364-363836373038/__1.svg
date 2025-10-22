@@ -1,26 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 160">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200">
   <defs>
     <style>
-      .cls-main { 
-        fill: #fffcfa; 
-        font-family: 'Inter Tight', Arial, sans-serif; 
-        font-weight: 700; 
-        font-size: 80px; 
-        letter-spacing: 4px;
-        text-transform: uppercase;
-      }
-      .cls-sub { 
-        fill: #fffcfa; 
-        font-family: 'Inter Tight', Arial, sans-serif; 
-        font-weight: 400; 
-        font-size: 18px; 
-        letter-spacing: 2px;
-        text-transform: uppercase;
-      }
+      .main-text { fill: #fffcfa; font-size: 72px; font-family: Arial, sans-serif; font-weight: 700; letter-spacing: 4px; }
+      .sub-text { fill: #fffcfa; font-size: 16px; font-family: Arial, sans-serif; font-weight: 400; letter-spacing: 3px; }
     </style>
   </defs>
-  <text class="cls-main" x="50" y="80">ADAM</text>
-  <text class="cls-main" x="50" y="140">MAKS</text>
-  <text class="cls-sub" x="380" y="145">WEB DESIGNER</text>
+  <text class="main-text" x="50" y="90">ADAM</text>
+  <text class="main-text" x="50" y="160">MAKS</text>
+  <text class="sub-text" x="380" y="165">WEB DESIGNER</text>
 </svg>

@@ -2,24 +2,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 120">
   <defs>
     <style>
-      .footer-logo { 
-        fill: #fffcfa; 
-        font-family: 'Inter Tight', Arial, sans-serif; 
-        font-weight: 700; 
-        font-size: 36px; 
-        letter-spacing: 3px;
-        text-transform: uppercase;
-      }
-      .footer-subtitle { 
-        fill: #fffcfa; 
-        font-family: 'Inter Tight', Arial, sans-serif; 
-        font-weight: 400; 
-        font-size: 14px; 
-        letter-spacing: 2px;
-        text-transform: uppercase;
-      }
+      .footer-main { fill: #fffcfa; font-size: 48px; font-family: Arial, sans-serif; font-weight: 700; letter-spacing: 4px; }
+      .footer-sub { fill: #fffcfa; font-size: 18px; font-family: Arial, sans-serif; font-weight: 400; letter-spacing: 2px; }
     </style>
   </defs>
-  <text class="footer-logo" x="50" y="55">ADAM MAKS</text>
-  <text class="footer-subtitle" x="450" y="62">DEVELOPER</text>
+  <text class="footer-main" x="50" y="65">ADAM MAKS</text>
+  <text class="footer-sub" x="520" y="68">DEVELOPER</text>
 </svg>

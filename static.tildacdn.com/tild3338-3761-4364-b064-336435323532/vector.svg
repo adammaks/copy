@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 60">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40">
   <defs>
     <style>
-      .cls-1 { fill: #fffcfa; font-family: 'Inter Tight', Arial, sans-serif; font-weight: 700; font-size: 32px; letter-spacing: 2px; }
+      .logo-bg { fill: #32302f; }
+      .logo-text { fill: #fffcfa; font-size: 18px; font-family: Arial, sans-serif; font-weight: 700; }
     </style>
   </defs>
-  <text class="cls-1" x="10" y="40">ADAM MAKS</text>
+  <!-- Фон для логотипа -->
+  <rect class="logo-bg" x="0" y="0" width="200" height="40" rx="4"/>
+  <!-- Текст ADAM MAKS с использованием стандартного шрифта -->
+  <text class="logo-text" x="10" y="26">ADAM MAKS</text>
 </svg>
