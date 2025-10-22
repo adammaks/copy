@@ -5,7 +5,7 @@
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&amp;family=Inter:wght@300&amp;display=swap');
       .big-title { 
         fill: #fffcfa; 
-        font-size: 90px; 
+        font-size: 100px; 
         font-family: 'Inter', Arial, sans-serif; 
         font-weight: 700; 
         letter-spacing: 6px;
@@ -13,7 +13,7 @@
       }
       .big-subtitle { 
         fill: #fffcfa; 
-        font-size: 22px; 
+        font-size: 32px; 
         font-family: 'Inter', Arial, sans-serif; 
         font-weight: 300; 
         letter-spacing: 4px;
