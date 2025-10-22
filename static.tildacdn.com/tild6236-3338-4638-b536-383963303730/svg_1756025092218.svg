@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 120">
+  <defs>
+    <style>
+      .footer-logo { 
+        fill: #fffcfa; 
+        font-family: 'Inter Tight', Arial, sans-serif; 
+        font-weight: 700; 
+        font-size: 36px; 
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+      .footer-subtitle { 
+        fill: #fffcfa; 
+        font-family: 'Inter Tight', Arial, sans-serif; 
+        font-weight: 400; 
+        font-size: 14px; 
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+    </style>
+  </defs>
+  <text class="footer-logo" x="50" y="55">ADAM MAKS</text>
+  <text class="footer-subtitle" x="450" y="62">DEVELOPER</text>
+</svg>
