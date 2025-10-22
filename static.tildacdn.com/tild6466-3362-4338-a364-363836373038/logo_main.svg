@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 250">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid meet">
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&amp;family=Inter:wght@300&amp;display=swap');
       .big-title { 
         fill: #fffcfa; 
-        font-size: 85px; 
+        font-size: 90px; 
         font-family: 'Inter', Arial, sans-serif; 
         font-weight: 700; 
         letter-spacing: 6px;
@@ -13,7 +13,7 @@
       }
       .big-subtitle { 
         fill: #fffcfa; 
-        font-size: 20px; 
+        font-size: 22px; 
         font-family: 'Inter', Arial, sans-serif; 
         font-weight: 300; 
         letter-spacing: 4px;
@@ -21,6 +21,6 @@
       }
     </style>
   </defs>
-  <text class="big-title" x="500" y="130">ADAM_MAKS</text>
-  <text class="big-subtitle" x="500" y="170">IT Designer and Developer</text>
+  <text class="big-title" x="600" y="155">ADAM_MAKS</text>
+  <text class="big-subtitle" x="600" y="195">IT Designer and Developer</text>
 </svg>
