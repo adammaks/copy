@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 40">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 50">
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;family=Poppins:wght@300&amp;display=swap');
       .header-text { 
         fill: #fffcfa; 
-        font-size: 16px; 
+        font-size: 20px; 
         font-family: 'Montserrat', sans-serif; 
         font-weight: 700; 
         letter-spacing: 2px;
@@ -13,7 +13,7 @@
       }
       .header-sub { 
         fill: #fffcfa; 
-        font-size: 9px; 
+        font-size: 11px; 
         font-family: 'Poppins', sans-serif; 
         font-weight: 300; 
         letter-spacing: 1.5px;
@@ -21,6 +21,6 @@
       }
     </style>
   </defs>
-  <text class="header-text" x="110" y="18">ADAM_MAKS</text>
-  <text class="header-sub" x="110" y="30">IT Designer and Developer</text>
+  <text class="header-text" x="130" y="22">ADAM_MAKS</text>
+  <text class="header-sub" x="130" y="38">IT DESIGNER AND DEVELOPER</text>
 </svg>
