@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 30">
+  <defs>
+    <style>
+      .logo-text { 
+        fill: #fffcfa; 
+        font-family: 'Inter Tight', Arial, sans-serif; 
+        font-weight: 700; 
+        font-size: 18px; 
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+    </style>
+  </defs>
+  <text class="logo-text" x="5" y="22">ADAM MAKS</text>
+</svg>
