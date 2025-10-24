@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 180">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;family=Poppins:wght@300&amp;display=swap');
+      .footer-title { 
+        fill: #fffcfa; 
+        font-size: 56px; 
+        font-family: 'Poppins', Arial, sans-serif; 
+        font-weight: 600; 
+        letter-spacing: 4px;
+        text-anchor: middle;
+      }
+      .footer-subtitle { 
+        fill: #fffcfa; 
+        font-size: 18px; 
+        font-family: 'Poppins', Arial, sans-serif; 
+        font-weight: 300; 
+        letter-spacing: 3px;
+        text-anchor: middle;
+      }
+    </style>
+  </defs>
+  <text class="footer-title" x="800" y="80">ADAM_MAKS</text>
+  <text class="footer-subtitle" x="800" y="120">IT DESIGNER AND DEVELOPER</text>
+</svg>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&amp;family=Inter:wght@300&amp;display=swap');
+      .big-title { 
+        fill: #fffcfa; 
+        font-size: 130px; 
+        font-family: 'Inter', Arial, sans-serif; 
+        font-weight: 700; 
+        letter-spacing: 6px;
+        text-anchor: middle;
+      }
+      .big-subtitle { 
+        fill: #fffcfa; 
+        font-size: 62px; 
+        font-family: 'Inter', Arial, sans-serif; 
+        font-weight: 300; 
+        letter-spacing: 4px;
+        text-anchor: middle;
+      }
+    </style>
+  </defs>
+  <text class="big-title" x="600" y="150">ADAM_MAKS</text>
+  <text class="big-subtitle" x="600" y="270">IT DESIGNER AND DEVELOPER</text>
+</svg>
