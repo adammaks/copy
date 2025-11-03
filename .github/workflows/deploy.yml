@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - cursor/copy-website-content-ac70
+      - main
   workflow_dispatch:  # позволяет запускать вручную
 
 jobs:
