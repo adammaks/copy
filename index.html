@@ -7,7 +7,14 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
   .uc-list-prj-3 [data-animate-sbs-opts*="'fi':'fixed'"],
   .uc-list-prj-4 [data-animate-sbs-opts*="'fi':'fixed'"],
   .uc-prj-last [data-animate-sbs-opts*="'fi':'fixed'"] {
-    position: absolute !important;
+    position: static !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: auto !important;
+    height: auto !important;
   }
 }
 </style>
@@ -19,7 +26,14 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
       projectBlocks.forEach(function(block) {
         var fixedElements = block.querySelectorAll('[data-animate-sbs-opts*="\'fi\':\'fixed\'"]');
         fixedElements.forEach(function(el) {
-          el.style.setProperty('position', 'absolute', 'important');
+          el.style.setProperty('position', 'static', 'important');
+          el.style.setProperty('transform', 'none', 'important');
+          el.style.setProperty('top', 'auto', 'important');
+          el.style.setProperty('left', 'auto', 'important');
+          el.style.setProperty('right', 'auto', 'important');
+          el.style.setProperty('bottom', 'auto', 'important');
+          el.style.setProperty('width', 'auto', 'important');
+          el.style.setProperty('height', 'auto', 'important');
         });
       });
     }
