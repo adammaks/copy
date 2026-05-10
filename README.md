@@ -16,9 +16,3 @@
 * **Interactive Portfolio** — видео-превью проектов при наведении.
 * **Smooth Scrolling** — плавная навигация по разделам.
 * **Modern Contact Form** — стильный блок обратной связи.
-
-## 🚀 Как запустить локально
-
-1. Склонируйте репозиторий:
-   ```bash
-   git clone [https://github.com/adammaks/copy.git](https://github.com/adammaks/copy.git)
