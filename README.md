@@ -1,16 +1,18 @@
-# React + Vite
+# ADAM MAKS — Creative Developer Portfolio 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Aesthetic Portfolio](https://img.shields.io/badge/Aesthetic-Glassmorphism-blue)
+![Tech Stack](https://img.shields.io/badge/Stack-React%20%7C%20Tailwind%20%7C%20Framer%20Motion-black)
 
-Currently, two official plugins are available:
+Современное интерактивное портфолио, созданное с акцентом на типографику, видео-презентации и эстетику Glassmorphism.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠 Стек технологий
+* **React.js** — основа приложения.
+* **Tailwind CSS** — стилизация и адаптивная верстка.
+* **Framer Motion** — продвинутые анимации и переходы.
+* **Vite** — быстрая сборка проекта.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🌟 Особенности проекта
+* **Glassmorphism UI** — эффект матового стекла в блоке услуг.
+* **Interactive Portfolio** — видео-превью проектов при наведении.
+* **Smooth Scrolling** — плавная навигация по разделам.
+* **Modern Contact Form** — стильный блок обратной связи.
