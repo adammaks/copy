@@ -95,7 +95,6 @@ function App() {
             <motion.div initial="hidden" animate="visible" variants={fadeUp} className="mt-auto w-full">
               <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-6">Связаться со мной</p>
               <div className="flex gap-3 justify-start">
-                {/* Соцсети (оставил hover эффекты тоже в blue-500) */}
                 <a href="https://instagram.com/adam_maks" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-500 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-50 transition-all group"><svg className="w-4 h-4 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
                 <a href="https://t.me/adam_maks" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-500 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-50 transition-all group"><svg className="w-4 h-4 group-hover:scale-110 transition-transform -ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.223-.548.223l.188-2.85 5.18-4.686c.223-.195-.054-.285-.346-.096l-6.405 4.032-2.76-.863c-.6-.185-.614-.6.125-.89l10.736-4.138c.5-.186.945.115.83.996z"/></svg></a>
                 <a href="https://vk.com/adam_maks" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-500 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-50 transition-all group"><svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M20.254 13.918c.642.668 1.348 1.272 1.905 2.012.355.467.683.957.94 1.48.223.453.072.846-.432.883-.93.07-1.865.048-2.8.033-.67-.01-.176-.328-.507-.643-.585-.56-1.144-1.15-1.728-1.713-.243-.233-.505-.443-.805-.614-.423-.24-.805-.137-1.01.296-.28.59-.344 1.23-.362 1.872-.01.35-.11.464-.464.475-1.854.053-3.568-.3-5.12-1.334-1.637-1.088-2.88-2.52-3.87-4.14-1.29-2.114-2.227-4.407-2.92-6.793-.13-.45.02-.612.49-.624.97-.025 1.94-.02 2.91-.005.35.006.54.17.67.5 1.01 2.58 2.37 4.9 4.3 6.84.23.23.46.3.73.13.3-.18.4-.48.42-.81.04-1.28.02-2.56-.12-3.83-.06-.52-.3-.87-.8-1.04-.3-.1-.28-.24-.07-.36.33-.2.72-.28 1.1-.3h2.36c.4.08.53.28.57.68.08 1.23.06 2.47.01 3.7-.01.38.16.63.53.7.35.07.6-.08.82-.32.96-1.05 1.66-2.28 2.22-3.58.2-.46.36-.94.52-1.42.1-.33.3-.47.66-.46.97.02 1.93.01 2.9.01.12 0 .25 0 .42 0-.2.32-.42.63-.62.96-.83 1.26-1.74 2.45-2.54 3.72-.25.4-.24.73.06 1.09z"/></svg></a>
@@ -373,26 +372,26 @@ function App() {
                 <div className="space-y-6">
                   {/* Почта */}
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-md">
+                    <div className="w-12 h-12 shrink-0 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-md">
                       <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                     </div>
-                    <span className="text-sm font-semibold tracking-wide text-blue-50">maksim_adamov@adammaks.ru</span>
+                    <span className="text-xs sm:text-sm font-semibold tracking-wide text-blue-50 break-all">maksim_adamov@adammaks.ru</span>
                   </div>
                   
                   {/* Телефон */}
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-md">
+                    <div className="w-12 h-12 shrink-0 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-md">
                       <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
                     </div>
-                    <span className="text-sm font-semibold tracking-wide text-blue-50">+7 (918)-021-81-52</span>
+                    <span className="text-xs sm:text-sm font-semibold tracking-wide text-blue-50 break-all">+7 (918)-021-81-52</span>
                   </div>
 
                   {/* Локация */}
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-md">
+                    <div className="w-12 h-12 shrink-0 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-md">
                       <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 2.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                     </div>
-                    <span className="text-sm font-semibold tracking-wide text-blue-50">Москва, Российская Федерация</span>
+                    <span className="text-xs sm:text-sm font-semibold tracking-wide text-blue-50">Москва, Российская Федерация</span>
                   </div>
 
                   {/* СОЦСЕТИ В ФУТЕРЕ */}
@@ -437,7 +436,7 @@ function App() {
                     <textarea rows={4} placeholder="Ваше сообщение" value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="w-full px-6 py-5 rounded-[2rem] bg-white border border-gray-200 text-sm focus:outline-none focus:border-blue-500 transition-all text-gray-900 placeholder:text-gray-300 resize-none"/>
                   </div>
                   <div className="md:col-span-2 mt-4">
-                    <button type="button" className="px-10 py-4 rounded-full bg-blue-600 text-white font-bold text-xs uppercase tracking-widest hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">Send messages</button>
+                    <button type="button" className="px-10 py-4 rounded-full bg-blue-600 text-white font-bold text-xs uppercase tracking-widest hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">Отправить сообщение</button>
                   </div>
                 </form>
               </div>
