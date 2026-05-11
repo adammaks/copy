@@ -39,19 +39,18 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden relative selection:bg-blue-200">
-      
       {/* ==================================================== */}
-      {/* ШАПКА ТОЛЬКО ДЛЯ МОБИЛОК (Плавающая) */}
+      {/* ШАПКА ТОЛЬКО ДЛЯ МОБИЛОК (Liquid Glass bg-blue-500) */}
       {/* ==================================================== */}
       <motion.header 
         initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }}
-        className="lg:hidden fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-lg border-b border-gray-100 px-6 py-4 flex justify-between items-center"
+        className="lg:hidden fixed top-0 left-0 w-full z-50 bg-blue-900/20 backdrop-blur-2xl px-6 py-4 flex justify-between items-center shadow-lg shadow-blue-500/10"
       >
         <div className="flex flex-col items-start text-left">
-          <h1 className="text-xl font-black uppercase tracking-tighter leading-none text-gray-900">Adam Maks</h1>
-          <span className="text-[8px] font-bold text-blue-600 uppercase tracking-[0.2em] mt-1">Creative Developer</span>
+          <h1 className="text-xl font-black uppercase tracking-tighter leading-none text-white drop-shadow-sm">Adam Maks</h1>
+          <span className="text-[8px] font-bold text-white/90 uppercase tracking-[0.2em] mt-1">Creative Developer</span>
         </div>
-        <button onClick={() => setIsMenuOpen(true)} className="p-2 text-gray-900 focus:outline-none">
+        <button onClick={() => setIsMenuOpen(true)} className="p-2 text-white focus:outline-none active:scale-95 transition-transform drop-shadow-sm">
           <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7h16M4 12h16M4 17h16" /></svg>
         </button>
       </motion.header>
@@ -75,63 +74,87 @@ function App() {
       </AnimatePresence>
 
       <div className="w-full">
-        
         {/* ==================================================== */}
         {/* 1. ПЕРВЫЙ БЛОК (HERO) */}
         {/* ==================================================== */}
-        <section className="flex flex-col lg:flex-row h-auto lg:h-screen relative">
+        <section className="flex flex-col lg:flex-row min-h-[100dvh] lg:h-screen relative pt-[70px] lg:pt-0">
           
-          {/* Левая панель: Видна только на Десктопе (скрыта на мобилках) */}
-          <aside className="hidden lg:flex w-1/5 p-10 flex-col justify-between border-r border-gray-100 bg-white relative z-20">
-            <div>
-              <motion.div initial="hidden" animate="visible" variants={fadeUp} className="flex flex-col items-start text-left">
-                <h1 className="text-2xl font-bold uppercase tracking-tighter leading-none">Adam Maks</h1>
-                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-2">Creative Developer</span>
-              </motion.div>
-              <nav className="flex flex-col gap-6 mt-20">
-                {navLinks.map((link, i) => (
-                  <motion.a key={link.name} href={link.href} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 + (i * 0.1) }} className="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-blue-600 transition-all">{link.name}</motion.a>
-                ))}
-              </nav>
-            </div>
+          {/* ЛЕВАЯ ПАНЕЛЬ: Навигация (Десктоп) */}
+          <aside className="hidden lg:flex w-full lg:w-1/5 p-6 lg:p-10 flex-col justify-between items-start lg:border-r border-gray-100 bg-white relative z-20 shrink-0">
+            <motion.div initial="hidden" animate="visible" variants={fadeUp} className="flex flex-col items-start text-left">
+              <h1 className="text-2xl font-black uppercase tracking-tighter leading-none text-gray-900">Adam Maks</h1>
+              <span className="text-[9px] font-bold text-blue-500 uppercase tracking-[0.2em] mt-1.5">Creative Developer</span>
+            </motion.div>
+            
+            <nav className="flex flex-col gap-6 mt-20 w-full">
+              {navLinks.map((link, i) => (
+                <motion.a key={link.name} href={link.href} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 + (i * 0.1) }} className="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-blue-500 transition-all">{link.name}</motion.a>
+              ))}
+            </nav>
 
-            <motion.div initial="hidden" animate="visible" variants={fadeUp}>
+            <motion.div initial="hidden" animate="visible" variants={fadeUp} className="mt-auto w-full">
               <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-6">Связаться со мной</p>
-              <div className="flex gap-3">
-                {/* Соцсети */}
-                <a href="https://instagram.com/adam_maks" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-500 hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50/50 transition-all group"><svg className="w-4 h-4 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-                <a href="https://t.me/adam_maks" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-500 hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50/50 transition-all group"><svg className="w-4 h-4 group-hover:scale-110 transition-transform -ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.223-.548.223l.188-2.85 5.18-4.686c.223-.195-.054-.285-.346-.096l-6.405 4.032-2.76-.863c-.6-.185-.614-.6.125-.89l10.736-4.138c.5-.186.945.115.83.996z"/></svg></a>
-                <a href="https://vk.com/adam_maks" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-500 hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50/50 transition-all group"><svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M20.254 13.918c.642.668 1.348 1.272 1.905 2.012.355.467.683.957.94 1.48.223.453.072.846-.432.883-.93.07-1.865.048-2.8.033-.67-.01-.176-.328-.507-.643-.585-.56-1.144-1.15-1.728-1.713-.243-.233-.505-.443-.805-.614-.423-.24-.805-.137-1.01.296-.28.59-.344 1.23-.362 1.872-.01.35-.11.464-.464.475-1.854.053-3.568-.3-5.12-1.334-1.637-1.088-2.88-2.52-3.87-4.14-1.29-2.114-2.227-4.407-2.92-6.793-.13-.45.02-.612.49-.624.97-.025 1.94-.02 2.91-.005.35.006.54.17.67.5 1.01 2.58 2.37 4.9 4.3 6.84.23.23.46.3.73.13.3-.18.4-.48.42-.81.04-1.28.02-2.56-.12-3.83-.06-.52-.3-.87-.8-1.04-.3-.1-.28-.24-.07-.36.33-.2.72-.28 1.1-.3h2.36c.4.08.53.28.57.68.08 1.23.06 2.47.01 3.7-.01.38.16.63.53.7.35.07.6-.08.82-.32.96-1.05 1.66-2.28 2.22-3.58.2-.46.36-.94.52-1.42.1-.33.3-.47.66-.46.97.02 1.93.01 2.9.01.12 0 .25 0 .42 0-.2.32-.42.63-.62.96-.83 1.26-1.74 2.45-2.54 3.72-.25.4-.24.73.06 1.09z"/></svg></a>
-                <a href="https://dprofile.ru/adam_maks" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-500 hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50/50 transition-all group"><span className="text-[12px] font-black tracking-tighter group-hover:scale-110 transition-transform">DP</span></a>
+              <div className="flex gap-3 justify-start">
+                {/* Соцсети (оставил hover эффекты тоже в blue-500) */}
+                <a href="https://instagram.com/adam_maks" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-500 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-50 transition-all group"><svg className="w-4 h-4 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                <a href="https://t.me/adam_maks" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-500 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-50 transition-all group"><svg className="w-4 h-4 group-hover:scale-110 transition-transform -ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.223-.548.223l.188-2.85 5.18-4.686c.223-.195-.054-.285-.346-.096l-6.405 4.032-2.76-.863c-.6-.185-.614-.6.125-.89l10.736-4.138c.5-.186.945.115.83.996z"/></svg></a>
+                <a href="https://vk.com/adam_maks" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-500 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-50 transition-all group"><svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M20.254 13.918c.642.668 1.348 1.272 1.905 2.012.355.467.683.957.94 1.48.223.453.072.846-.432.883-.93.07-1.865.048-2.8.033-.67-.01-.176-.328-.507-.643-.585-.56-1.144-1.15-1.728-1.713-.243-.233-.505-.443-.805-.614-.423-.24-.805-.137-1.01.296-.28.59-.344 1.23-.362 1.872-.01.35-.11.464-.464.475-1.854.053-3.568-.3-5.12-1.334-1.637-1.088-2.88-2.52-3.87-4.14-1.29-2.114-2.227-4.407-2.92-6.793-.13-.45.02-.612.49-.624.97-.025 1.94-.02 2.91-.005.35.006.54.17.67.5 1.01 2.58 2.37 4.9 4.3 6.84.23.23.46.3.73.13.3-.18.4-.48.42-.81.04-1.28.02-2.56-.12-3.83-.06-.52-.3-.87-.8-1.04-.3-.1-.28-.24-.07-.36.33-.2.72-.28 1.1-.3h2.36c.4.08.53.28.57.68.08 1.23.06 2.47.01 3.7-.01.38.16.63.53.7.35.07.6-.08.82-.32.96-1.05 1.66-2.28 2.22-3.58.2-.46.36-.94.52-1.42.1-.33.3-.47.66-.46.97.02 1.93.01 2.9.01.12 0 .25 0 .42 0-.2.32-.42.63-.62.96-.83 1.26-1.74 2.45-2.54 3.72-.25.4-.24.73.06 1.09z"/></svg></a>
+                <a href="https://dprofile.ru/adam_maks" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-500 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-50 transition-all group"><span className="text-[12px] font-black tracking-tighter group-hover:scale-110 transition-transform">DP</span></a>
               </div>
             </motion.div>
           </aside>
 
-          {/* Центральный синий блок (На мобилках начинается сразу под шапкой) */}
-          <div className="w-full lg:w-2/5 bg-blue-600 text-white p-6 pt-32 sm:p-12 lg:p-16 flex flex-col justify-center relative z-10">
-            <motion.div initial="hidden" animate="visible" variants={fadeUp} className="inline-block self-start px-4 py-1.5 mb-6 lg:mb-8 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-white text-[10px] font-bold tracking-widest uppercase">
-              Web Adam®
-            </motion.div>
-            <motion.h2 initial="hidden" animate="visible" variants={fadeUp} transition={{ delay: 0.1 }} className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[0.9] mb-6 lg:mb-8 tracking-tighter uppercase text-left">
-              Разработка,<br/>которая дышит.
-            </motion.h2>
-            <motion.p initial="hidden" animate="visible" variants={fadeUp} transition={{ delay: 0.2 }} className="text-blue-50 mb-10 text-lg font-light max-w-md leading-relaxed opacity-90 text-left text-balance">
-              Создаю современные веб-проекты с чистого нуля. Закрываю полный цикл: от проектирования интерфейса до финальных React-анимаций.
-            </motion.p>
+          {/* ЦЕНТРАЛЬНАЯ ПАНЕЛЬ: Синий блок (bg-blue-500) */}
+          <div className="flex-1 lg:w-2/5 bg-blue-500 text-white p-6 sm:p-12 lg:p-16 flex flex-col justify-center relative overflow-hidden z-10">
             
-            <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ delay: 0.3 }} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-              <a href="https://t.me/adam_maks" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-8 py-5 rounded-full font-bold text-[10px] tracking-widest uppercase bg-white text-blue-600 shadow-xl hover:scale-105 active:scale-95 transition-all text-center">
-                Сотрудничать
-              </a>
-              <button onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })} className="w-full sm:w-auto px-8 py-5 rounded-full font-bold text-[10px] tracking-widest uppercase bg-transparent border-2 border-white/30 hover:bg-white/10 hover:scale-105 active:scale-95 transition-all text-white text-center">
-                Проекты
-              </button>
-            </motion.div>
+            {/* ФОТО НА МОБИЛКЕ: Сильная прозрачность (blue-500/50), фото хорошо видно */}
+            <div className="absolute inset-0 z-0 lg:hidden pointer-events-none">
+              <img src="/photo.jpg" alt="Background" className="w-full h-full object-cover grayscale opacity-80" />
+              <div className="absolute inset-0 bg-blue-500/50 backdrop-blur-[3px]"></div>
+              {/* Градиент снизу, чтобы текст читался лучше */}
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-500/90 via-transparent to-transparent"></div>
+            </div>
+
+            <div className="relative z-10">
+              <motion.div initial="hidden" animate="visible" variants={fadeUp} className="inline-block self-start px-4 py-2 mb-6 lg:mb-8 rounded-full bg-white/20 border border-white/30 backdrop-blur-md text-white text-[9px] font-bold tracking-[0.2em] uppercase shadow-sm">
+                Web Adam®
+              </motion.div>
+              
+              <motion.h2 initial="hidden" animate="visible" variants={fadeUp} transition={{ delay: 0.1 }} className="text-[2.75rem] leading-[0.9] sm:text-6xl lg:text-7xl font-black mb-6 lg:mb-8 tracking-tighter uppercase text-left drop-shadow-lg">
+                Разработка,<br/>которая дышит.
+              </motion.h2>
+              
+              <motion.p initial="hidden" animate="visible" variants={fadeUp} transition={{ delay: 0.2 }} className="text-white/95 mb-10 lg:mb-12 text-sm sm:text-base lg:text-lg font-medium max-w-md leading-relaxed text-left text-balance drop-shadow-md">
+                Создаю современные веб-проекты с чистого нуля. Закрываю полный цикл: от проектирования интерфейса до финальных React-анимаций.
+              </motion.p>
+              
+              {/* Кнопки */}
+              <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ delay: 0.3 }} className="flex flex-col sm:flex-row gap-3 lg:gap-4 w-full sm:w-auto">
+                <a 
+                  href="https://t.me/adam_maks" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto px-8 py-4 lg:py-5 rounded-full font-black text-[10px] tracking-[0.15em] uppercase bg-white text-blue-500 shadow-xl shadow-black/10 hover:scale-105 active:scale-95 transition-all text-center flex items-center justify-center"
+                >
+                  Сотрудничать
+                </a>
+                <button 
+                  onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="w-full sm:w-auto px-8 py-4 lg:py-5 rounded-full font-black text-[10px] tracking-[0.15em] uppercase bg-white/10 border border-white/30 hover:bg-white/20 hover:scale-105 active:scale-95 transition-all backdrop-blur-md text-white text-center flex items-center justify-center shadow-lg"
+                >
+                  Проекты
+                </button>
+              </motion.div>
+            </div>
           </div>
 
-          {/* Фото */}
-          <motion.div initial={{ opacity: 0, scale: 1.05 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2 }} className="w-full lg:w-1/2 h-[50vh] lg:h-full bg-blue-600 overflow-hidden relative z-0">
-            <img src="/photo.jpg" alt="Adam Maks" className="w-full h-full object-cover object-left grayscale-[20%] hover:grayscale-0 transition-all duration-700 opacity-90 lg:opacity-85 shadow-2xl" />
+          {/* ПРАВАЯ ПАНЕЛЬ: Фото (Скрыто на мобилках) */}
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2 }} className="hidden lg:block w-full lg:w-2/5 h-full bg-blue-500 overflow-hidden relative z-0">
+            <img 
+              src="/photo.jpg" 
+              alt="Adam Maks" 
+              className="w-full h-full object-cover object-left grayscale-[20%] hover:grayscale-0 transition-all duration-700 opacity-90 shadow-2xl" 
+            />
           </motion.div>
         </section>
 
@@ -139,21 +162,22 @@ function App() {
         {/* 2. ВТОРОЙ БЛОК (ОБО МНЕ) - С АНИМАЦИЯМИ */}
         {/* ==================================================== */}
         <section id="about" className="flex flex-col lg:flex-row w-full bg-white">
-          <div className="w-full lg:w-1/2 bg-blue-500 text-white p-8 sm:p-16 lg:p-24 flex flex-col justify-between min-h-[60vh] lg:min-h-screen">
+          <div className="w-full lg:w-2/5 bg-blue-500 text-white p-8 sm:p-16 lg:p-20 flex flex-col justify-between min-h-[60vh] lg:min-h-screen">
              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp} className="text-left">
-               <h2 className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.85] mb-8 uppercase">Дизайн и код.<br/>Одно целое.</h2>
+               <h2 className="text-5xl sm:text-7xl lg:text-6xl font-black tracking-tighter leading-[0.85] mb-8 uppercase">Дизайн и код.<br/>Одно целое.</h2>
                <div className="flex gap-6 text-[10px] uppercase tracking-[0.4em] opacity-60 font-bold"><span>[ UI / UX ]</span><span>[ FRONTEND ]</span></div>
              </motion.div>
-             <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="mt-12 overflow-hidden shadow-2xl rounded-full">
+             <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="mt-12 overflow-hidden shadow-2xl rounded-3xl">
                <img src="/photo3.jpg" alt="About" className="w-full aspect-[5/5] object-cover" />
              </motion.div>
+              <p className="text-3xl sm:text-5xl lg:text-1xl self-center font-black leading-[1] mt-10 tracking-tighter uppercase">Адамов Максим</p>
           </div>
-          <div className="w-full lg:w-1/2 bg-white text-gray-900 p-8 sm:p-16 lg:p-24 flex flex-col justify-between min-h-[60vh] lg:min-h-screen border-l border-gray-100">
+          <div className="w-full lg:w-1/2 bg-white text-gray-900 p-8 sm:p-16 lg:p-24 flex flex-col justify-center min-h-[60vh] lg:min-h-screen border-l border-gray-100">
              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp} className="mt-10 text-left">
                <p className="text-3xl sm:text-5xl lg:text-6xl font-black leading-[1] mb-12 tracking-tighter uppercase">На фрилансе я закрываю всю боль клиента разом.</p>
                <div className="flex gap-6 sm:gap-10 text-[10px] uppercase tracking-[0.1em] text-gray-300 font-bold mb-3 flex-wrap"><span>[ REACT ]</span><span>[ TAILWIND ]</span><span>[ MOTION ]</span></div>
              </motion.div>
-             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUp} className="flex flex-col sm:flex-row gap-12 items-end mt-10">
+              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUp} className="flex flex-col sm:flex-row gap-12 items-end mt-10">
                 <div className="w-full text-sm text-gray-500 font-medium leading-relaxed text-left space-y-4">
                   <p className="italic">Я создаю полноценные digital-продукты, где каждая деталь работает как часть единой системы. От идеи и визуальной концепции до UI/UX, frontend-разработки и финального запуска.</p>
                   <p>Моя работа не ограничивается только созданием сайта. Я разрабатываю визуальную айдентику бренда: логотипы, цветовые палитры, типографику, интерфейсы, анимации и общее визуальное направление проекта, создавая цельный и узнаваемый образ.</p>
