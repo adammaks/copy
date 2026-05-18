@@ -12,7 +12,54 @@ function App() {
   const [hoveredProject, setHoveredProject] = useState(null);
   const [selectedProject, setSelectedProject] = useState(null);
   
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  // 1. Расширили стейт для всех полей формы
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', social: '', message: '' });
+  // Стейт для отслеживания статуса отправки
+  const [status, setStatus] = useState('');
+
+  // 2. Функция отправки данных на Web3Forms
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Останавливаем перезагрузку страницы
+    setStatus('loading');
+
+    const data = {
+      access_key: "da055efe-8aba-439e-b2b0-f347d9ec6be2", // Твой ключ из скриншота!
+      subject: "Новая заявка с сайта Adam Maks",
+      from_name: "AdamMaks.ru",
+      Имя: formData.name,
+      Email: formData.email,
+      Телефон: formData.phone,
+      Соцсеть: formData.social,
+      Сообщение: formData.message,
+    };
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setStatus('success');
+        // Очищаем форму после успеха
+        setFormData({ name: '', email: '', phone: '', social: '', message: '' });
+        // Возвращаем кнопку в исходное состояние через 3 секунды
+        setTimeout(() => setStatus(''), 3000);
+      } else {
+        setStatus('error');
+        setTimeout(() => setStatus(''), 4000);
+      }
+    } catch (error) {
+      console.log(error);
+      setStatus('error');
+      setTimeout(() => setStatus(''), 4000);
+    }
+  };
 
   useEffect(() => {
     if (isMenuOpen || selectedProject) {
@@ -40,7 +87,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden relative selection:bg-blue-200">
       {/* ==================================================== */}
-      {/* ШАПКА ТОЛЬКО ДЛЯ МОБИЛОК (Liquid Glass bg-blue-500) */}
+      {/* ШАПКА ТОЛЬКО ДЛЯ МОБИЛОК */}
       {/* ==================================================== */}
       <motion.header 
         initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }}
@@ -79,7 +126,6 @@ function App() {
         {/* ==================================================== */}
         <section className="flex flex-col lg:flex-row min-h-[100dvh] lg:h-screen relative pt-[70px] lg:pt-0">
           
-          {/* ЛЕВАЯ ПАНЕЛЬ: Навигация (Десктоп) */}
           <aside className="hidden lg:flex w-full lg:w-1/5 p-6 lg:p-10 flex-col justify-between items-start lg:border-r border-gray-100 bg-white relative z-20 shrink-0">
             <motion.div initial="hidden" animate="visible" variants={fadeUp} className="flex flex-col items-start text-left">
               <h1 className="text-2xl font-black uppercase tracking-tighter leading-none text-gray-900">Adam Maks</h1>
@@ -103,14 +149,10 @@ function App() {
             </motion.div>
           </aside>
 
-          {/* ЦЕНТРАЛЬНАЯ ПАНЕЛЬ: Синий блок (bg-blue-500) */}
           <div className="flex-1 lg:w-2/5 bg-blue-500 text-white p-6 sm:p-12 lg:p-16 flex flex-col justify-center relative overflow-hidden z-10">
-            
-            {/* ФОТО НА МОБИЛКЕ: Сильная прозрачность (blue-500/50), фото хорошо видно */}
             <div className="absolute inset-0 z-0 lg:hidden pointer-events-none">
               <img src="/photo.jpg" alt="Background" className="w-full h-full object-cover grayscale opacity-80" />
               <div className="absolute inset-0 bg-blue-500/50 backdrop-blur-[3px]"></div>
-              {/* Градиент снизу, чтобы текст читался лучше */}
               <div className="absolute inset-0 bg-gradient-to-t from-blue-500/90 via-transparent to-transparent"></div>
             </div>
 
@@ -127,38 +169,20 @@ function App() {
                 Создаю современные веб-проекты с чистого нуля. Закрываю полный цикл: от проектирования интерфейса до финальных React-анимаций.
               </motion.p>
               
-              {/* Кнопки */}
               <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ delay: 0.3 }} className="flex flex-col sm:flex-row gap-3 lg:gap-4 w-full sm:w-auto">
-                <a 
-                  href="https://t.me/adam_maks" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto px-8 py-4 lg:py-5 rounded-full font-black text-[10px] tracking-[0.15em] uppercase bg-white text-blue-500 shadow-xl shadow-black/10 hover:scale-105 active:scale-95 transition-all text-center flex items-center justify-center"
-                >
-                  Сотрудничать
-                </a>
-                <button 
-                  onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="w-full sm:w-auto px-8 py-4 lg:py-5 rounded-full font-black text-[10px] tracking-[0.15em] uppercase bg-white/10 border border-white/30 hover:bg-white/20 hover:scale-105 active:scale-95 transition-all backdrop-blur-md text-white text-center flex items-center justify-center shadow-lg"
-                >
-                  Проекты
-                </button>
+                <a href="https://t.me/adam_maks" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-8 py-4 lg:py-5 rounded-full font-black text-[10px] tracking-[0.15em] uppercase bg-white text-blue-500 shadow-xl shadow-black/10 hover:scale-105 active:scale-95 transition-all text-center flex items-center justify-center">Сотрудничать</a>
+                <button onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })} className="w-full sm:w-auto px-8 py-4 lg:py-5 rounded-full font-black text-[10px] tracking-[0.15em] uppercase bg-white/10 border border-white/30 hover:bg-white/20 hover:scale-105 active:scale-95 transition-all backdrop-blur-md text-white text-center flex items-center justify-center shadow-lg">Проекты</button>
               </motion.div>
             </div>
           </div>
 
-          {/* ПРАВАЯ ПАНЕЛЬ: Фото (Скрыто на мобилках) */}
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2 }} className="hidden lg:block w-full lg:w-2/5 h-full bg-blue-500 overflow-hidden relative z-0">
-            <img 
-              src="/photo.jpg" 
-              alt="Adam Maks" 
-              className="w-full h-full object-cover object-left grayscale-[20%] hover:grayscale-0 transition-all duration-700 opacity-90 shadow-2xl" 
-            />
+            <img src="/photo.jpg" alt="Adam Maks" className="w-full h-full object-cover object-left grayscale-[20%] hover:grayscale-0 transition-all duration-700 opacity-90 shadow-2xl" />
           </motion.div>
         </section>
 
         {/* ==================================================== */}
-        {/* 2. ВТОРОЙ БЛОК (ОБО МНЕ) - С АНИМАЦИЯМИ */}
+        {/* 2. ВТОРОЙ БЛОК (ОБО МНЕ) */}
         {/* ==================================================== */}
         <section id="about" className="flex flex-col lg:flex-row w-full bg-white">
           <div className="w-full lg:w-2/5 bg-blue-500 text-white p-8 sm:p-16 lg:p-20 flex flex-col justify-between min-h-[60vh] lg:min-h-screen">
@@ -355,8 +379,9 @@ function App() {
             </div>
           </div>
         </section>
-{/* ==================================================== */}
-        {/* 7. БЛОК: ОБРАТНАЯ СВЯЗЬ (CONTACT) */}
+
+        {/* ==================================================== */}
+        {/* 7. БЛОК: ОБРАТНАЯ СВЯЗЬ (CONTACT) - С АКТИВНОЙ ОТПРАВКОЙ! */}
         {/* ==================================================== */}
         <section id="contact" className="w-full py-20 lg:py-40 bg-white">
           <div className="max-w-6xl mx-auto px-6 lg:px-12">
@@ -414,29 +439,42 @@ function App() {
 
               {/* ПРАВАЯ ЧАСТЬ (ФОРМА) */}
               <div className="flex-1 p-10 lg:p-14 bg-[#f0f4f8]">
-                <form className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-8">
+                {/* 3. Добавили onSubmit в саму форму */}
+                <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-8">
                   <div className="flex flex-col gap-2">
                     <label className="text-xs font-bold text-gray-900 ml-2">Ваше имя и фамилия</label>
-                    <input type="text" placeholder="Имя и Фамилия" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="w-full px-6 py-4 rounded-full bg-white border border-gray-200 text-sm focus:outline-none focus:border-blue-500 transition-all text-gray-900 placeholder:text-gray-300"/>
+                    <input type="text" required placeholder="Имя и Фамилия" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="w-full px-6 py-4 rounded-full bg-white border border-gray-200 text-sm focus:outline-none focus:border-blue-500 transition-all text-gray-900 placeholder:text-gray-300"/>
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className="text-xs font-bold text-gray-900 ml-2">Email адрес</label>
-                    <input type="email" placeholder="Email адрес" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full px-6 py-4 rounded-full bg-white border border-gray-200 text-sm focus:outline-none focus:border-blue-500 transition-all text-gray-900 placeholder:text-gray-300"/>
+                    <input type="email" required placeholder="Email адрес" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full px-6 py-4 rounded-full bg-white border border-gray-200 text-sm focus:outline-none focus:border-blue-500 transition-all text-gray-900 placeholder:text-gray-300"/>
                   </div>
                   <div className="flex flex-col gap-2 md:col-span-2">
                     <label className="text-xs font-bold text-gray-900 ml-2">Номер телефона</label>
-                    <input type="text" placeholder="Номер телефона" className="w-full px-6 py-4 rounded-full bg-white border border-gray-200 text-sm focus:outline-none focus:border-blue-500 transition-all text-gray-900 placeholder:text-gray-300"/>
+                    <input type="tel" placeholder="Номер телефона" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="w-full px-6 py-4 rounded-full bg-white border border-gray-200 text-sm focus:outline-none focus:border-blue-500 transition-all text-gray-900 placeholder:text-gray-300"/>
                   </div>
                   <div className="flex flex-col gap-2 md:col-span-2">
                     <label className="text-xs font-bold text-gray-900 ml-2">Соц. сеть</label>
-                    <input type="text" placeholder="Телеграм или ВК" className="w-full px-6 py-5 rounded-full bg-white border border-gray-200 text-sm focus:outline-none focus:border-blue-500 transition-all text-gray-900 placeholder:text-gray-300"/>
+                    <input type="text" placeholder="Телеграм или ВК" value={formData.social} onChange={(e) => setFormData({...formData, social: e.target.value})} className="w-full px-6 py-5 rounded-full bg-white border border-gray-200 text-sm focus:outline-none focus:border-blue-500 transition-all text-gray-900 placeholder:text-gray-300"/>
                   </div>
                   <div className="flex flex-col gap-2 md:col-span-2">
                     <label className="text-xs font-bold text-gray-900 ml-2">Сообщение</label>
-                    <textarea rows={4} placeholder="Ваше сообщение" value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="w-full px-6 py-5 rounded-[2rem] bg-white border border-gray-200 text-sm focus:outline-none focus:border-blue-500 transition-all text-gray-900 placeholder:text-gray-300 resize-none"/>
+                    <textarea rows={4} required placeholder="Ваше сообщение" value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="w-full px-6 py-5 rounded-[2rem] bg-white border border-gray-200 text-sm focus:outline-none focus:border-blue-500 transition-all text-gray-900 placeholder:text-gray-300 resize-none"/>
                   </div>
                   <div className="md:col-span-2 mt-4">
-                    <button type="button" className="px-10 py-4 rounded-full bg-blue-600 text-white font-bold text-xs uppercase tracking-widest hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">Отправить сообщение</button>
+                    {/* 4. Кнопка с динамическим текстом и цветом */}
+                    <button 
+                      type="submit" 
+                      disabled={status === 'loading'}
+                      className={`px-10 py-4 rounded-full text-white font-bold text-xs uppercase tracking-widest transition-all shadow-lg 
+                        ${status === 'success' ? 'bg-green-500 shadow-green-200' : 'bg-blue-600 hover:bg-blue-700 shadow-blue-200'}
+                        ${status === 'loading' ? 'opacity-70 cursor-wait' : ''}
+                      `}
+                    >
+                      {status === 'loading' ? 'Отправка...' : status === 'success' ? 'Отправлено ✓' : 'Send messages'}
+                    </button>
+                    {/* Текст ошибки, если что-то пойдет не так */}
+                    {status === 'error' && <p className="text-red-500 text-xs font-bold mt-3 ml-2">Ошибка при отправке. Попробуйте еще раз.</p>}
                   </div>
                 </form>
               </div>
